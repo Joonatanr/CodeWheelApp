@@ -21,10 +21,22 @@ namespace CodeWheelApp
         private List<WheelEntry_T> myValues = new List<WheelEntry_T>();
         private int selectedIndex = 0;
         private float currentAngle = 90.0f;
+        private Color wheelColor = Color.Blue;
 
         private Bitmap myBitmap;
 
-        public Color WheelColor { get; set; } = Color.Blue;
+        public Color WheelColor 
+        {   get
+            {
+                return wheelColor;
+            }
+            set
+            {
+                wheelColor = value;
+                updateBitmap();
+            }
+        }
+
         public int WheelWidth { get; set; } = 80;
         public int WheelDiameter { get; set; } = 480;
 
@@ -75,18 +87,27 @@ namespace CodeWheelApp
             updateBitmap();
         }
 
-        public SingleWheel(int diameter) : this() 
+        public SingleWheel(int diameter)
         {
             this.WheelDiameter = diameter;
+
+            /* Set up the main bitmap object. */
+            myBitmap = new Bitmap(WheelDiameter, WheelDiameter);
+
+            updateBitmap();
         }
 
-        public void Draw(Graphics gfx)
+        public void Draw(Graphics gfx, PointF canvasCenter)
         {
             using (Matrix m = new Matrix())
             {
-                m.RotateAt((360.0f - currentAngle) - 90.0f, new PointF(myBitmap.Width / 2, myBitmap.Height / 2));
+                PointF centerPoint = new PointF(myBitmap.Width / 2, myBitmap.Height / 2);
+                m.Translate(canvasCenter.X - (myBitmap.Width / 2), canvasCenter.Y - (myBitmap.Height / 2));
+                m.RotateAt((360.0f - currentAngle) - 90.0f, centerPoint);
+                
                 gfx.Transform = m;
                 gfx.DrawImage(myBitmap, 0, 0);
+                //gfx.DrawImage(myBitmap, getRectangleAroundCenterPoint(canvasCenter, myBitmap.Size));
                 gfx.ResetTransform();
             }
         }
@@ -228,11 +249,13 @@ namespace CodeWheelApp
         {
             if (myBitmap != null)
             {
-                float radius = myBitmap.Width / 2;
+                //float radius = myBitmap.Width / 2;
+                float radius = WheelDiameter / 2;
                 PointF center = new PointF(myBitmap.Width / 2, myBitmap.Height / 2);
 
-                /* Lets just draw something to get started. */
+                /* Get the graphics object from the bitmap.  */
                 Graphics gfx = Graphics.FromImage(myBitmap);
+                gfx.Clear(Color.Transparent);
 
                 drawDonut(gfx, center, radius);
                 //drawMarkers(gfx, center, radius - (DonutWidth / 2));

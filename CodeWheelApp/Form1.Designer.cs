@@ -28,15 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             userControlInnerCodeWheel1 = new UserControlCodeWheel();
             label1 = new Label();
-            textBox1 = new TextBox();
-            buttonTurnLeft = new Button();
-            buttonTurnRight = new Button();
+            textBoxInnerWheel = new TextBox();
+            buttonTurnInnerLeft = new Button();
+            buttonTurnInnerRight = new Button();
             label2 = new Label();
             groupBox1 = new GroupBox();
+            textBoxOuterWheel = new TextBox();
+            label4 = new Label();
+            textBoxMidWheel = new TextBox();
+            label3 = new Label();
             groupBox2 = new GroupBox();
+            buttonTurnOuterLeft = new Button();
+            buttonTurnOuterRight = new Button();
+            buttonTurnMidLeft = new Button();
+            buttonTurnMidRight = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -44,9 +51,9 @@
             // userControlInnerCodeWheel1
             // 
             userControlInnerCodeWheel1.BackColor = Color.Transparent;
-            userControlInnerCodeWheel1.Location = new Point(184, 130);
+            userControlInnerCodeWheel1.Location = new Point(34, 12);
             userControlInnerCodeWheel1.Name = "userControlInnerCodeWheel1";
-            userControlInnerCodeWheel1.Size = new Size(480, 480);
+            userControlInnerCodeWheel1.Size = new Size(748, 677);
             userControlInnerCodeWheel1.TabIndex = 0;
             // 
             // label1
@@ -58,41 +65,41 @@
             label1.TabIndex = 1;
             label1.Text = "Inner Value";
             // 
-            // textBox1
+            // textBoxInnerWheel
             // 
-            textBox1.Location = new Point(77, 22);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(179, 23);
-            textBox1.TabIndex = 2;
+            textBoxInnerWheel.Location = new Point(77, 22);
+            textBoxInnerWheel.Name = "textBoxInnerWheel";
+            textBoxInnerWheel.ReadOnly = true;
+            textBoxInnerWheel.Size = new Size(179, 23);
+            textBoxInnerWheel.TabIndex = 2;
             // 
-            // buttonTurnLeft
+            // buttonTurnInnerLeft
             // 
-            buttonTurnLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnLeft.Location = new Point(38, 22);
-            buttonTurnLeft.Name = "buttonTurnLeft";
-            buttonTurnLeft.Size = new Size(75, 58);
-            buttonTurnLeft.TabIndex = 3;
-            buttonTurnLeft.Text = "<<";
-            buttonTurnLeft.UseVisualStyleBackColor = true;
-            buttonTurnLeft.Click += buttonTurnLeft_Click;
+            buttonTurnInnerLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
+            buttonTurnInnerLeft.Location = new Point(38, 22);
+            buttonTurnInnerLeft.Name = "buttonTurnInnerLeft";
+            buttonTurnInnerLeft.Size = new Size(75, 58);
+            buttonTurnInnerLeft.TabIndex = 3;
+            buttonTurnInnerLeft.Text = "<<";
+            buttonTurnInnerLeft.UseVisualStyleBackColor = true;
+            buttonTurnInnerLeft.Click += buttonTurnLeft_Click;
             // 
-            // buttonTurnRight
+            // buttonTurnInnerRight
             // 
-            buttonTurnRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnRight.Location = new Point(119, 22);
-            buttonTurnRight.Name = "buttonTurnRight";
-            buttonTurnRight.Size = new Size(75, 58);
-            buttonTurnRight.TabIndex = 4;
-            buttonTurnRight.Text = ">>";
-            buttonTurnRight.UseVisualStyleBackColor = true;
-            buttonTurnRight.Click += buttonTurnRight_Click;
+            buttonTurnInnerRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
+            buttonTurnInnerRight.Location = new Point(119, 22);
+            buttonTurnInnerRight.Name = "buttonTurnInnerRight";
+            buttonTurnInnerRight.Size = new Size(75, 58);
+            buttonTurnInnerRight.TabIndex = 4;
+            buttonTurnInnerRight.Text = ">>";
+            buttonTurnInnerRight.UseVisualStyleBackColor = true;
+            buttonTurnInnerRight.Click += buttonTurnRight_Click;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            label2.Location = new Point(339, 717);
+            label2.Location = new Point(334, 692);
             label2.Name = "label2";
             label2.Size = new Size(153, 45);
             label2.TabIndex = 5;
@@ -100,25 +107,109 @@
             // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(textBoxOuterWheel);
+            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(textBoxMidWheel);
+            groupBox1.Controls.Add(label3);
+            groupBox1.Controls.Add(textBoxInnerWheel);
             groupBox1.Controls.Add(label1);
             groupBox1.Location = new Point(788, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(262, 130);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            // 
+            // textBoxOuterWheel
+            // 
+            textBoxOuterWheel.Location = new Point(77, 80);
+            textBoxOuterWheel.Name = "textBoxOuterWheel";
+            textBoxOuterWheel.ReadOnly = true;
+            textBoxOuterWheel.Size = new Size(179, 23);
+            textBoxOuterWheel.TabIndex = 6;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(6, 83);
+            label4.Name = "label4";
+            label4.Size = new Size(68, 15);
+            label4.TabIndex = 5;
+            label4.Text = "Outer Value";
+            // 
+            // textBoxMidWheel
+            // 
+            textBoxMidWheel.Location = new Point(77, 51);
+            textBoxMidWheel.Name = "textBoxMidWheel";
+            textBoxMidWheel.ReadOnly = true;
+            textBoxMidWheel.Size = new Size(179, 23);
+            textBoxMidWheel.TabIndex = 4;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(6, 54);
+            label3.Name = "label3";
+            label3.Size = new Size(59, 15);
+            label3.TabIndex = 3;
+            label3.Text = "Mid Value";
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(buttonTurnLeft);
-            groupBox2.Controls.Add(buttonTurnRight);
+            groupBox2.Controls.Add(buttonTurnOuterLeft);
+            groupBox2.Controls.Add(buttonTurnOuterRight);
+            groupBox2.Controls.Add(buttonTurnMidLeft);
+            groupBox2.Controls.Add(buttonTurnMidRight);
+            groupBox2.Controls.Add(buttonTurnInnerLeft);
+            groupBox2.Controls.Add(buttonTurnInnerRight);
             groupBox2.Location = new Point(788, 148);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(256, 614);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
-            groupBox2.Text = "groupBox2";
+            // 
+            // buttonTurnOuterLeft
+            // 
+            buttonTurnOuterLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
+            buttonTurnOuterLeft.Location = new Point(38, 150);
+            buttonTurnOuterLeft.Name = "buttonTurnOuterLeft";
+            buttonTurnOuterLeft.Size = new Size(75, 58);
+            buttonTurnOuterLeft.TabIndex = 7;
+            buttonTurnOuterLeft.Text = "<<";
+            buttonTurnOuterLeft.UseVisualStyleBackColor = true;
+            buttonTurnOuterLeft.Click += buttonTurnOuterLeft_Click;
+            // 
+            // buttonTurnOuterRight
+            // 
+            buttonTurnOuterRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
+            buttonTurnOuterRight.Location = new Point(119, 150);
+            buttonTurnOuterRight.Name = "buttonTurnOuterRight";
+            buttonTurnOuterRight.Size = new Size(75, 58);
+            buttonTurnOuterRight.TabIndex = 8;
+            buttonTurnOuterRight.Text = ">>";
+            buttonTurnOuterRight.UseVisualStyleBackColor = true;
+            buttonTurnOuterRight.Click += buttonTurnOuterRight_Click;
+            // 
+            // buttonTurnMidLeft
+            // 
+            buttonTurnMidLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
+            buttonTurnMidLeft.Location = new Point(38, 86);
+            buttonTurnMidLeft.Name = "buttonTurnMidLeft";
+            buttonTurnMidLeft.Size = new Size(75, 58);
+            buttonTurnMidLeft.TabIndex = 5;
+            buttonTurnMidLeft.Text = "<<";
+            buttonTurnMidLeft.UseVisualStyleBackColor = true;
+            buttonTurnMidLeft.Click += buttonTurnMidLeft_Click;
+            // 
+            // buttonTurnMidRight
+            // 
+            buttonTurnMidRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
+            buttonTurnMidRight.Location = new Point(119, 86);
+            buttonTurnMidRight.Name = "buttonTurnMidRight";
+            buttonTurnMidRight.Size = new Size(75, 58);
+            buttonTurnMidRight.TabIndex = 6;
+            buttonTurnMidRight.Text = ">>";
+            buttonTurnMidRight.UseVisualStyleBackColor = true;
+            buttonTurnMidRight.Click += buttonTurnMidRight_Click;
             // 
             // Form1
             // 
@@ -143,11 +234,19 @@
 
         private UserControlCodeWheel userControlInnerCodeWheel1;
         private Label label1;
-        private TextBox textBox1;
-        private Button buttonTurnLeft;
-        private Button buttonTurnRight;
+        private TextBox textBoxInnerWheel;
+        private Button buttonTurnInnerLeft;
+        private Button buttonTurnInnerRight;
         private Label label2;
         private GroupBox groupBox1;
         private GroupBox groupBox2;
+        private TextBox textBoxOuterWheel;
+        private Label label4;
+        private TextBox textBoxMidWheel;
+        private Label label3;
+        private Button buttonTurnOuterLeft;
+        private Button buttonTurnOuterRight;
+        private Button buttonTurnMidLeft;
+        private Button buttonTurnMidRight;
     }
 }

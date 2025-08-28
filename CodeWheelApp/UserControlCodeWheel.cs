@@ -46,7 +46,7 @@ namespace CodeWheelApp
 
             foreach(SingleWheel sw in Wheels)
             {
-                sw.Draw(e.Graphics);
+                sw.Draw(e.Graphics, new PointF(this.Width / 2, this.Height / 2));
             }
         }
     }
