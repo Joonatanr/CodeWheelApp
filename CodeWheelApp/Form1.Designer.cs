@@ -44,13 +44,10 @@
             // userControlInnerCodeWheel1
             // 
             userControlInnerCodeWheel1.BackColor = Color.Transparent;
-            userControlInnerCodeWheel1.ImageDictionary = (Dictionary<string, Bitmap>)resources.GetObject("userControlInnerCodeWheel1.ImageDictionary");
             userControlInnerCodeWheel1.Location = new Point(184, 130);
             userControlInnerCodeWheel1.Name = "userControlInnerCodeWheel1";
             userControlInnerCodeWheel1.Size = new Size(480, 480);
             userControlInnerCodeWheel1.TabIndex = 0;
-            userControlInnerCodeWheel1.WheelColor = Color.FromArgb(255, 192, 128);
-            userControlInnerCodeWheel1.WheelWidth = 80F;
             // 
             // label1
             // 

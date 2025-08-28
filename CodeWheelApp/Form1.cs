@@ -2,6 +2,8 @@ namespace CodeWheelApp
 {
     public partial class Form1 : Form
     {
+        private SingleWheel InnerWheel;
+        
         public Form1()
         {
             InitializeComponent();
@@ -25,20 +27,32 @@ namespace CodeWheelApp
             InnerWheelDictionary.Add("PULL", Properties.Resources.INNER_PULL);
             InnerWheelDictionary.Add("DISINTEGRATE", Properties.Resources.INNER_DISINTEGRATE);
 
-            userControlInnerCodeWheel1.ImageDictionary = InnerWheelDictionary;
-            textBox1.Text = userControlInnerCodeWheel1.getCurrentSelectedValue();
+            InnerWheel = new SingleWheel(500);
+            InnerWheel.ImageDictionary = InnerWheelDictionary;
+            InnerWheel.WheelWidth = 80;
+
+            textBox1.Text = InnerWheel.getCurrentSelectedValue();
+
+            userControlInnerCodeWheel1.AddWheel(InnerWheel);
+
+            //userControlInnerCodeWheel1.ImageDictionary = InnerWheelDictionary;
+            //textBox1.Text = userControlInnerCodeWheel1.getCurrentSelectedValue();
         }
 
         private void buttonTurnLeft_Click(object sender, EventArgs e)
         {
-            userControlInnerCodeWheel1.Rotate(true);
-            textBox1.Text = userControlInnerCodeWheel1.getCurrentSelectedValue();
+            //userControlInnerCodeWheel1.Rotate(true);
+            //textBox1.Text = userControlInnerCodeWheel1.getCurrentSelectedValue();
+            InnerWheel.Rotate(true);
+            textBox1.Text = InnerWheel.getCurrentSelectedValue();
         }
 
         private void buttonTurnRight_Click(object sender, EventArgs e)
         {
-            userControlInnerCodeWheel1.Rotate(false);
-            textBox1.Text = userControlInnerCodeWheel1.getCurrentSelectedValue();
+            //userControlInnerCodeWheel1.Rotate(false);
+            //textBox1.Text = userControlInnerCodeWheel1.getCurrentSelectedValue();
+            InnerWheel.Rotate(false);
+            textBox1.Text = InnerWheel.getCurrentSelectedValue();
         }
     }
 }
