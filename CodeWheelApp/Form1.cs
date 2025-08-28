@@ -31,7 +31,8 @@ namespace CodeWheelApp
             InnerWheel = new SingleWheel(300);
             InnerWheel.ImageDictionary = InnerWheelDictionary;
             InnerWheel.WheelWidth = 65;
-            InnerWheel.WheelColor = Color.Yellow;
+            InnerWheel.WheelColor = Color.FromArgb(255, 229, 153);
+            InnerWheel.setToValue("DANCE");
 
             textBoxInnerWheel.Text = InnerWheel.getCurrentSelectedValue();
             userControlInnerCodeWheel1.AddWheel(InnerWheel);
@@ -57,7 +58,8 @@ namespace CodeWheelApp
             MidWheel = new SingleWheel(InnerWheel.WheelDiameter + (InnerWheel.WheelWidth * 2));
             MidWheel.ImageDictionary = MidWheelDictionary;
             MidWheel.WheelWidth = InnerWheel.WheelWidth;
-            MidWheel.WheelColor = Color.Brown;
+            MidWheel.WheelColor = Color.FromArgb(255, 217, 102);
+            MidWheel.setToValue("HUMAN");
 
             textBoxMidWheel.Text = MidWheel.getCurrentSelectedValue();
             userControlInnerCodeWheel1.AddWheel(MidWheel);
@@ -83,7 +85,8 @@ namespace CodeWheelApp
             OuterWheel = new SingleWheel(MidWheel.WheelDiameter + (MidWheel.WheelWidth * 2));
             OuterWheel.ImageDictionary = OuterWheelDictionary;
             OuterWheel.WheelWidth = MidWheel.WheelWidth;
-            OuterWheel.WheelColor = Color.Blue;
+            OuterWheel.WheelColor = Color.FromArgb(241, 194, 50);
+            OuterWheel.setToValue("SLOWLY");
 
             textBoxOuterWheel.Text = OuterWheel.getCurrentSelectedValue();
             userControlInnerCodeWheel1.AddWheel(OuterWheel);
@@ -124,6 +127,15 @@ namespace CodeWheelApp
         {
             OuterWheel.Rotate(false);
             textBoxOuterWheel.Text = OuterWheel.getCurrentSelectedValue();
+        }
+
+        private void buttonPrintPress_Click(object sender, EventArgs e)
+        {
+            Bitmap top = InnerWheel.getCurrentSelectedImage();
+            Bitmap middle = MidWheel.getCurrentSelectedImage();
+            Bitmap bottom = OuterWheel.getCurrentSelectedImage();
+
+            userControlScroll1.setGlyphImages(top, middle, bottom);
         }
     }
 }

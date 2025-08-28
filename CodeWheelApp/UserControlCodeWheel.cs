@@ -48,6 +48,23 @@ namespace CodeWheelApp
             {
                 sw.Draw(e.Graphics, new PointF(this.Width / 2, this.Height / 2));
             }
+
+            drawSelector(e.Graphics);
+        }
+
+        private void drawSelector(Graphics g)
+        {
+            Pen myPen = new Pen(Color.Black, 4);
+
+            PointF start = new PointF( (this.Width / 2) - 50 , this.Height - 80);
+            PointF end = new PointF((this.Width / 2) - 25, (this.Height / 2) + 70);
+
+            g.DrawLine(myPen, start, end);
+
+            start = new PointF((this.Width / 2) + 50, this.Height - 80);
+            end = new PointF((this.Width / 2) + 25, (this.Height / 2) + 70);
+
+            g.DrawLine(myPen, start, end);
         }
     }
 }

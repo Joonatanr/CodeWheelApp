@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Policy;
 
 namespace CodeWheelApp
 {
@@ -173,6 +174,9 @@ namespace CodeWheelApp
             float outerRadius = radius;
 
             gfx.FillRegion(myBrush, GetRingRegion(center, innerRadius, outerRadius));
+
+            gfx.DrawEllipse(new Pen(Color.Black, 2), getRectangleAroundCenterPoint(center, new SizeF(outerRadius * 2 - 2, outerRadius * 2 - 2)));
+            gfx.DrawEllipse(new Pen(Color.Black, 2), getRectangleAroundCenterPoint(center, new SizeF(innerRadius * 2, innerRadius * 2)));
         }
 
         public string getCurrentSelectedValue()
@@ -184,6 +188,32 @@ namespace CodeWheelApp
             catch (Exception)
             {
                 return "NONE";
+            }
+        }
+
+        public void setToValue(string value)
+        {
+            for (int x = 0; x < myValues.Count; x++)
+            { 
+                if (myValues[x].Value == value)
+                {
+                    /* Set the position of the code wheel. */
+                    selectedIndex = x;
+                    rotateWheel(myValues[x].Angle);
+                    break;
+                }
+            }
+        }
+
+        public Bitmap getCurrentSelectedImage()
+        {
+            try
+            {
+                return myValues[selectedIndex].Image;
+            }
+            catch (Exception)
+            {
+                return null;
             }
         }
 
