@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace CodeWheelApp
 {
@@ -26,13 +27,39 @@ namespace CodeWheelApp
             /* Set up the first bitmap. */
             myBitmap = new Bitmap(this.Width - 2, this.Height - 2);
             float radius = myBitmap.Width / 2;
+            PointF center = new PointF(myBitmap.Width / 2, myBitmap.Height / 2);
 
             /* Lets just draw something to get started. */
             Graphics gfx = Graphics.FromImage(myBitmap);
 
-            drawDonut(gfx, new PointF(myBitmap.Width / 2, myBitmap.Height / 2), radius);
+            drawDonut(gfx, center, radius);
+            drawMarkers(gfx, center, radius - (DonutWidth/ 2));
 
         }
+
+        private void drawMarkers(Graphics gfx, PointF center, float radius)
+        {
+            Brush myBrush = new SolidBrush(Color.Black);
+
+            for (float x = 0.0f; x <= 360.0f; x += 30.0f)
+            {
+                float myAngle = ((x * (float)Math.PI) / 180f);
+
+                float xPos = center.X - (radius * (float)(Math.Cos(myAngle)));
+                float yPos = center.Y - (radius * (float)(Math.Sin(myAngle)));
+
+                PointF location = new PointF(xPos, yPos);
+
+                drawSingleMarker(gfx, location, new SizeF(10.0f, 25.0f), myAngle);
+            }
+        }
+
+        private void drawSingleMarker(Graphics gfx, PointF location, SizeF size, float angle)
+        {
+            gfx.FillEllipse(new SolidBrush(Color.Red), getRectangleAroundCenterPoint(location, size));
+            //gfx.FillRectangle(new SolidBrush(Color.Red), getRectangleAroundCenterPoint(location, size));
+        }
+
 
         private void drawDonut(Graphics gfx, PointF center, float radius)
         {
@@ -59,6 +86,14 @@ namespace CodeWheelApp
             e.Graphics.DrawImage(myBitmap, 1, 1);
         }
 
+
+        public static RectangleF getRectangleAroundCenterPoint(PointF center, SizeF size)
+        {
+            float xPos = center.X - size.Width / 2;
+            float yPos = center.Y - size.Height / 2;
+
+            return new RectangleF(xPos, yPos, size.Width, size.Height);
+        }
 
         public static Region GetRingRegion(PointF center, float innerRadius, float outherRadius)
         {
