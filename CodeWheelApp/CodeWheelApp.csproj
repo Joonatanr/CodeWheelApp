@@ -8,4 +8,169 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="resources\INNER_ATTACK.png" />
+    <None Remove="resources\INNER_DANCE.png" />
+    <None Remove="resources\INNER_DISINTEGRATE.png" />
+    <None Remove="resources\INNER_HIT.png" />
+    <None Remove="resources\INNER_PICKUP.png" />
+    <None Remove="resources\INNER_POUND.png" />
+    <None Remove="resources\INNER_PULL.png" />
+    <None Remove="resources\INNER_PUSH.png" />
+    <None Remove="resources\INNER_REPAIR.png" />
+    <None Remove="resources\INNER_SING.png" />
+    <None Remove="resources\INNER_THROW.png" />
+    <None Remove="resources\INNER_TURN.png" />
+    <None Remove="resources\MID_ELF.png" />
+    <None Remove="resources\MID_EVERYBODY.png" />
+    <None Remove="resources\MID_GATE.png" />
+    <None Remove="resources\MID_GNOME.png" />
+    <None Remove="resources\MID_GOLEM.png" />
+    <None Remove="resources\MID_GROUND.png" />
+    <None Remove="resources\MID_HUMAN.png" />
+    <None Remove="resources\MID_INTRUDERS.png" />
+    <None Remove="resources\MID_ROCK.png" />
+    <None Remove="resources\MID_SELF.png" />
+    <None Remove="resources\MID_TREE.png" />
+    <None Remove="resources\MID_WHEEL.png" />
+    <None Remove="resources\OUTER_CLOCKWISE.png" />
+    <None Remove="resources\OUTER_COUNTERCLOCKWISE.png" />
+    <None Remove="resources\OUTER_DRAMATICALLY.png" />
+    <None Remove="resources\OUTER_FAST.png" />
+    <None Remove="resources\OUTER_GENTLY.png" />
+    <None Remove="resources\OUTER_GRACEFULLY.png" />
+    <None Remove="resources\OUTER_HARD.png" />
+    <None Remove="resources\OUTER_ROUGHLY.png" />
+    <None Remove="resources\OUTER_SLOWLY.png" />
+    <None Remove="resources\OUTER_SNEAKILY.png" />
+    <None Remove="resources\OUTER_THEATRICALLY.png" />
+    <None Remove="resources\OUTER_VICIOUSLY.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="resources\INNER_ATTACK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_DANCE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_DISINTEGRATE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_HIT.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_PICKUP.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_POUND.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_PULL.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_PUSH.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_REPAIR.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_SING.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_THROW.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\INNER_TURN.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_ELF.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_EVERYBODY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_GATE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_GNOME.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_GOLEM.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_GROUND.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_HUMAN.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_INTRUDERS.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_ROCK.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_SELF.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_TREE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\MID_WHEEL.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_CLOCKWISE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_COUNTERCLOCKWISE.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_DRAMATICALLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_FAST.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_GENTLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_GRACEFULLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_HARD.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_ROUGHLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_SLOWLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_SNEAKILY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_THEATRICALLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="resources\OUTER_VICIOUSLY.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

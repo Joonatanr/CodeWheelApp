@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Linq;
+using System.Reflection.Metadata;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,25 +18,80 @@ namespace CodeWheelApp
     public partial class UserControlCodeWheel : UserControl
     {
         private Bitmap myBitmap;
-        
+
+        private Dictionary<string, Bitmap> myImageDictionary = new Dictionary<string, Bitmap>();
+
         public int DonutWidth = 60;
+        public Dictionary<string, Bitmap> ImageDictionary 
+        { 
+            get { return myImageDictionary; } 
+            
+            set
+            {
+                myImageDictionary = value;
+                updateBitmap();
+                this.Invalidate();
+            }    
+        }
         
         public UserControlCodeWheel()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
 
-            /* Set up the first bitmap. */
+            /* Set up the bitmap object. */
             myBitmap = new Bitmap(this.Width - 2, this.Height - 2);
-            float radius = myBitmap.Width / 2;
-            PointF center = new PointF(myBitmap.Width / 2, myBitmap.Height / 2);
 
-            /* Lets just draw something to get started. */
-            Graphics gfx = Graphics.FromImage(myBitmap);
+            updateBitmap();
+        }
 
-            drawDonut(gfx, center, radius);
-            drawMarkers(gfx, center, radius - (DonutWidth/ 2));
+        private void updateBitmap()
+        {
+            if (myBitmap != null)
+            {
+                float radius = myBitmap.Width / 2;
+                PointF center = new PointF(myBitmap.Width / 2, myBitmap.Height / 2);
 
+                /* Lets just draw something to get started. */
+                Graphics gfx = Graphics.FromImage(myBitmap);
+
+                drawDonut(gfx, center, radius);
+                //drawMarkers(gfx, center, radius - (DonutWidth / 2));
+                drawImages(gfx, center, radius - (DonutWidth / 2));
+            }
+        }
+
+        private void drawImages(Graphics gfx, PointF center, float radius)
+        {
+            int cnt = myImageDictionary.Count;
+            float interval = 360.0f / cnt;
+            float x = 0.0f;
+
+            foreach(string key in myImageDictionary.Keys)
+            {
+                float myAngle = ((x * (float)Math.PI) / 180f);
+
+                float xPos = center.X - (radius * (float)(Math.Cos(myAngle)));
+                float yPos = center.Y - (radius * (float)(Math.Sin(myAngle)));
+
+                PointF location = new PointF(xPos, yPos);
+
+                Bitmap original = myImageDictionary[key];
+                /* Scaling down to 50% is hardcoded now. Could do this more dynamically ofcourse... */
+                Bitmap resized = new Bitmap(original, new Size(original.Width / 2, original.Height / 2));
+
+                //gfx.DrawImage(resized, getRectangleAroundCenterPoint(location, resized.Size));
+
+                using (Matrix m = new Matrix())
+                {
+                    m.RotateAt(x + 90, location);
+                    gfx.Transform = m;
+                    gfx.DrawImage(resized, getRectangleAroundCenterPoint(location, resized.Size));
+                    gfx.ResetTransform();
+                }
+
+                x += interval;
+            }
         }
 
         private void drawMarkers(Graphics gfx, PointF center, float radius)
@@ -56,7 +113,7 @@ namespace CodeWheelApp
 
         private void drawSingleMarker(Graphics gfx, PointF location, SizeF size, float angle)
         {
-            gfx.FillEllipse(new SolidBrush(Color.Red), getRectangleAroundCenterPoint(location, size));
+            gfx.FillEllipse(new SolidBrush(Color.Purple), getRectangleAroundCenterPoint(location, size));
             //gfx.FillRectangle(new SolidBrush(Color.Red), getRectangleAroundCenterPoint(location, size));
         }
 

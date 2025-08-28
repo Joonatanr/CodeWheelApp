@@ -1,10 +1,29 @@
 namespace CodeWheelApp
 {
     public partial class Form1 : Form
-    {
+    {   
         public Form1()
         {
             InitializeComponent();
+
+            Dictionary<string, Bitmap> InnerWheelDictionary = new Dictionary<string, Bitmap>();
+
+            InnerWheelDictionary.Add("TURN",    Properties.Resources.INNER_TURN);
+            InnerWheelDictionary.Add("REPAIR",  Properties.Resources.INNER_REPAIR);
+            InnerWheelDictionary.Add("POUND",   Properties.Resources.INNER_POUND);
+            InnerWheelDictionary.Add("HIT",     Properties.Resources.INNER_HIT);
+
+            InnerWheelDictionary.Add("THROW",   Properties.Resources.INNER_THROW);
+            InnerWheelDictionary.Add("DANCE",   Properties.Resources.INNER_DANCE);
+            InnerWheelDictionary.Add("ATTACK",  Properties.Resources.INNER_ATTACK);
+            InnerWheelDictionary.Add("SING",    Properties.Resources.INNER_SING);
+
+            InnerWheelDictionary.Add("PUSH",        Properties.Resources.INNER_PUSH);
+            InnerWheelDictionary.Add("PICKUP",      Properties.Resources.INNER_PICKUP);
+            InnerWheelDictionary.Add("PULL",        Properties.Resources.INNER_PULL);
+            InnerWheelDictionary.Add("DISINTEGRATE", Properties.Resources.INNER_DISINTEGRATE);
+
+            userControlCodeWheel1.ImageDictionary = InnerWheelDictionary;
         }
     }
 }
