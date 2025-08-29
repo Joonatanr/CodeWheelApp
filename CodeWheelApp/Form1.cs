@@ -6,6 +6,8 @@ namespace CodeWheelApp
         private SingleWheel MidWheel;
         private SingleWheel OuterWheel;
 
+        private DmControlPanel controlPanel = new DmControlPanel();
+
         public Form1()
         {
             InitializeComponent();
@@ -93,13 +95,20 @@ namespace CodeWheelApp
 
             userControlDecoderDisplayWheel.setDisplayedValues(InnerWheel.getCurrentSelectedValue(), MidWheel.getCurrentSelectedValue(), OuterWheel.getCurrentSelectedValue());
             updateWheelDecodeDisplay();
+
+            controlPanel.toggleShowDecode = new DmControlPanel.toggleShowDecodeListener(toggleDecodeVisible);
+            controlPanel.Show();
         }
 
         private void updateWheelDecodeDisplay()
         {
             userControlDecoderDisplayWheel.setDisplayedValues
-                (InnerWheel.getCurrentSelectedValue(), 
-                MidWheel.getCurrentSelectedValue(), 
+                (InnerWheel.getCurrentSelectedValue(),
+                MidWheel.getCurrentSelectedValue(),
+                OuterWheel.getCurrentSelectedValue());
+
+            controlPanel.setDecodeValuesForWheel(InnerWheel.getCurrentSelectedValue(),
+                MidWheel.getCurrentSelectedValue(),
                 OuterWheel.getCurrentSelectedValue());
 
         }
@@ -146,8 +155,13 @@ namespace CodeWheelApp
             Bitmap middle = MidWheel.getCurrentSelectedImage();
             Bitmap bottom = OuterWheel.getCurrentSelectedImage();
 
+            string topString = InnerWheel.getCurrentSelectedValue();
+            string midString = MidWheel.getCurrentSelectedValue();
+            string bottomString = OuterWheel.getCurrentSelectedValue();
+
             userControlScroll1.setGlyphImages(top, middle, bottom);
-            userControlDecoderDisplayScroll1.setDisplayedValues(InnerWheel.getCurrentSelectedValue(), MidWheel.getCurrentSelectedValue(), OuterWheel.getCurrentSelectedValue());
+            userControlDecoderDisplayScroll1.setDisplayedValues(topString, midString, bottomString);
+            controlPanel.setDecodeValuesForScroll1(topString, midString, bottomString);
         }
 
         private void buttonPrintPress2_Click(object sender, EventArgs e)
@@ -156,9 +170,27 @@ namespace CodeWheelApp
             Bitmap middle = MidWheel.getCurrentSelectedImage();
             Bitmap bottom = OuterWheel.getCurrentSelectedImage();
 
-            userControlScroll2.setGlyphImages(top, middle, bottom);
-            userControlDecoderDisplayScroll2.setDisplayedValues(InnerWheel.getCurrentSelectedValue(), MidWheel.getCurrentSelectedValue(), OuterWheel.getCurrentSelectedValue());
+            string topString = InnerWheel.getCurrentSelectedValue();
+            string midString = MidWheel.getCurrentSelectedValue();
+            string bottomString = OuterWheel.getCurrentSelectedValue();
 
+            userControlScroll2.setGlyphImages(top, middle, bottom);
+            userControlDecoderDisplayScroll2.setDisplayedValues(topString, midString, bottomString);
+            controlPanel.setDecodeValuesForScroll2(topString, midString, bottomString);
+
+
+        }
+
+        private void buttonDmDisplay_Click(object sender, EventArgs e)
+        {
+            controlPanel.Show();
+        }
+
+        private void toggleDecodeVisible()
+        {
+            userControlDecoderDisplayScroll1.Visible = !userControlDecoderDisplayScroll1.Visible;
+            userControlDecoderDisplayScroll2.Visible = !userControlDecoderDisplayScroll2.Visible;
+            userControlDecoderDisplayWheel.Visible = !userControlDecoderDisplayWheel.Visible;
         }
     }
 }

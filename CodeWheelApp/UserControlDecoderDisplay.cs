@@ -12,6 +12,16 @@ namespace CodeWheelApp
 {
     public partial class UserControlDecoderDisplay : UserControl
     {   
+        public String DisplayText
+        {
+            get
+            {
+                return groupBox1.Text;
+            }
+
+            set { groupBox1.Text = value; }
+        }
+        
         public UserControlDecoderDisplay()
         {
             InitializeComponent();

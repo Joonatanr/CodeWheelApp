@@ -37,6 +37,7 @@
             buttonTurnMidLeft = new Button();
             buttonTurnMidRight = new Button();
             groupBox3 = new GroupBox();
+            buttonDmDisplay = new Button();
             userControlDecoderDisplayScroll2 = new UserControlDecoderDisplay();
             userControlDecoderDisplayScroll1 = new UserControlDecoderDisplay();
             buttonPrintPress2 = new Button();
@@ -56,7 +57,7 @@
             userControlInnerCodeWheel1.BackColor = Color.Transparent;
             userControlInnerCodeWheel1.Location = new Point(179, 34);
             userControlInnerCodeWheel1.Name = "userControlInnerCodeWheel1";
-            userControlInnerCodeWheel1.Size = new Size(650, 650);
+            userControlInnerCodeWheel1.Size = new Size(674, 650);
             userControlInnerCodeWheel1.TabIndex = 0;
             // 
             // buttonTurnInnerLeft
@@ -90,7 +91,7 @@
             groupBox2.Controls.Add(buttonTurnMidRight);
             groupBox2.Controls.Add(buttonTurnInnerLeft);
             groupBox2.Controls.Add(buttonTurnInnerRight);
-            groupBox2.Location = new Point(6, 144);
+            groupBox2.Location = new Point(6, 25);
             groupBox2.Name = "groupBox2";
             groupBox2.Size = new Size(186, 191);
             groupBox2.TabIndex = 7;
@@ -145,32 +146,47 @@
             // groupBox3
             // 
             groupBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            groupBox3.Controls.Add(buttonDmDisplay);
             groupBox3.Controls.Add(userControlDecoderDisplayScroll2);
             groupBox3.Controls.Add(userControlDecoderDisplayScroll1);
             groupBox3.Controls.Add(buttonPrintPress2);
             groupBox3.Controls.Add(userControlScroll2);
             groupBox3.Controls.Add(buttonPrintPress1);
             groupBox3.Controls.Add(userControlScroll1);
-            groupBox3.Location = new Point(854, 15);
+            groupBox3.Location = new Point(878, 15);
             groupBox3.Name = "groupBox3";
             groupBox3.Size = new Size(494, 848);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
             groupBox3.Text = "Scrolls";
             // 
+            // buttonDmDisplay
+            // 
+            buttonDmDisplay.Location = new Point(413, 802);
+            buttonDmDisplay.Name = "buttonDmDisplay";
+            buttonDmDisplay.Size = new Size(75, 40);
+            buttonDmDisplay.TabIndex = 6;
+            buttonDmDisplay.Text = "Dm";
+            buttonDmDisplay.UseVisualStyleBackColor = true;
+            buttonDmDisplay.Click += buttonDmDisplay_Click;
+            // 
             // userControlDecoderDisplayScroll2
             // 
+            userControlDecoderDisplayScroll2.DisplayText = "Scroll 2 Translation";
             userControlDecoderDisplayScroll2.Location = new Point(6, 484);
             userControlDecoderDisplayScroll2.Name = "userControlDecoderDisplayScroll2";
             userControlDecoderDisplayScroll2.Size = new Size(215, 132);
             userControlDecoderDisplayScroll2.TabIndex = 5;
+            userControlDecoderDisplayScroll2.Visible = false;
             // 
             // userControlDecoderDisplayScroll1
             // 
+            userControlDecoderDisplayScroll1.DisplayText = "Scroll 1 Translation";
             userControlDecoderDisplayScroll1.Location = new Point(6, 101);
             userControlDecoderDisplayScroll1.Name = "userControlDecoderDisplayScroll1";
             userControlDecoderDisplayScroll1.Size = new Size(215, 132);
             userControlDecoderDisplayScroll1.TabIndex = 4;
+            userControlDecoderDisplayScroll1.Visible = false;
             // 
             // buttonPrintPress2
             // 
@@ -210,10 +226,12 @@
             // 
             // userControlDecoderDisplayWheel
             // 
-            userControlDecoderDisplayWheel.Location = new Point(6, 15);
+            userControlDecoderDisplayWheel.DisplayText = "Wheel Translation";
+            userControlDecoderDisplayWheel.Location = new Point(6, 222);
             userControlDecoderDisplayWheel.Name = "userControlDecoderDisplayWheel";
             userControlDecoderDisplayWheel.Size = new Size(186, 132);
             userControlDecoderDisplayWheel.TabIndex = 9;
+            userControlDecoderDisplayWheel.Visible = false;
             // 
             // groupBox1
             // 
@@ -223,7 +241,7 @@
             groupBox1.Controls.Add(userControlInnerCodeWheel1);
             groupBox1.Location = new Point(12, 15);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(836, 848);
+            groupBox1.Size = new Size(860, 848);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Wheel";
@@ -232,7 +250,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1360, 875);
+            ClientSize = new Size(1384, 875);
             Controls.Add(groupBox1);
             Controls.Add(groupBox3);
             DoubleBuffered = true;
@@ -263,5 +281,6 @@
         private UserControlDecoderDisplay userControlDecoderDisplayScroll1;
         private UserControlDecoderDisplay userControlDecoderDisplayWheel;
         private GroupBox groupBox1;
+        private Button buttonDmDisplay;
     }
 }
