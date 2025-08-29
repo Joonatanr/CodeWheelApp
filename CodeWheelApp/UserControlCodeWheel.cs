@@ -104,14 +104,15 @@ namespace CodeWheelApp
             }
 
             PointF centerPoint = new PointF(this.Width / 2, this.Height / 2); ;
+            const float upperOffsetAngle = 17.0f;
+            const float lowerOffsetAngle = 11.5f;
 
-
-            PointF start = getPointOnCircularLine(270.0f + 15.0f, centerPoint, innerRadius);
-            PointF end = getPointOnCircularLine(270.0f + 10.0f, centerPoint, outerRadius);
+            PointF start = getPointOnCircularLine(270.0f + upperOffsetAngle, centerPoint, innerRadius);
+            PointF end = getPointOnCircularLine(270.0f + lowerOffsetAngle, centerPoint, outerRadius);
             g.DrawLine(myPen, start, end);
 
-            start = getPointOnCircularLine(270.0f + 345.0f, centerPoint, innerRadius);
-            end = getPointOnCircularLine(270.0f + 350.0f, centerPoint, outerRadius);
+            start = getPointOnCircularLine(270.0f + 360.0f - upperOffsetAngle, centerPoint, innerRadius);
+            end = getPointOnCircularLine(270.0f + 360.0f - lowerOffsetAngle, centerPoint, outerRadius);
             g.DrawLine(myPen, start, end);
         }
 

@@ -76,7 +76,7 @@
             // 
             buttonTurnInnerRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonTurnInnerRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnInnerRight.Location = new Point(89, 14);
+            buttonTurnInnerRight.Location = new Point(128, 14);
             buttonTurnInnerRight.Name = "buttonTurnInnerRight";
             buttonTurnInnerRight.Size = new Size(88, 53);
             buttonTurnInnerRight.TabIndex = 4;
@@ -94,7 +94,7 @@
             groupBox2.Controls.Add(buttonTurnInnerRight);
             groupBox2.Location = new Point(6, 25);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(186, 191);
+            groupBox2.Size = new Size(225, 191);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
@@ -113,7 +113,7 @@
             // 
             buttonTurnOuterRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonTurnOuterRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnOuterRight.Location = new Point(89, 132);
+            buttonTurnOuterRight.Location = new Point(128, 132);
             buttonTurnOuterRight.Name = "buttonTurnOuterRight";
             buttonTurnOuterRight.Size = new Size(87, 51);
             buttonTurnOuterRight.TabIndex = 8;
@@ -136,7 +136,7 @@
             // 
             buttonTurnMidRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonTurnMidRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnMidRight.Location = new Point(89, 73);
+            buttonTurnMidRight.Location = new Point(128, 73);
             buttonTurnMidRight.Name = "buttonTurnMidRight";
             buttonTurnMidRight.Size = new Size(87, 53);
             buttonTurnMidRight.TabIndex = 6;
@@ -177,7 +177,7 @@
             userControlDecoderDisplayScroll2.DisplayText = "Scroll 2 Translation";
             userControlDecoderDisplayScroll2.Location = new Point(6, 484);
             userControlDecoderDisplayScroll2.Name = "userControlDecoderDisplayScroll2";
-            userControlDecoderDisplayScroll2.Size = new Size(215, 132);
+            userControlDecoderDisplayScroll2.Size = new Size(226, 132);
             userControlDecoderDisplayScroll2.TabIndex = 5;
             userControlDecoderDisplayScroll2.Visible = false;
             // 
@@ -186,7 +186,7 @@
             userControlDecoderDisplayScroll1.DisplayText = "Scroll 1 Translation";
             userControlDecoderDisplayScroll1.Location = new Point(6, 101);
             userControlDecoderDisplayScroll1.Name = "userControlDecoderDisplayScroll1";
-            userControlDecoderDisplayScroll1.Size = new Size(215, 132);
+            userControlDecoderDisplayScroll1.Size = new Size(226, 132);
             userControlDecoderDisplayScroll1.TabIndex = 4;
             userControlDecoderDisplayScroll1.Visible = false;
             // 
@@ -195,7 +195,7 @@
             buttonPrintPress2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 186);
             buttonPrintPress2.Location = new Point(6, 408);
             buttonPrintPress2.Name = "buttonPrintPress2";
-            buttonPrintPress2.Size = new Size(215, 70);
+            buttonPrintPress2.Size = new Size(226, 70);
             buttonPrintPress2.TabIndex = 3;
             buttonPrintPress2.Text = "PRESS";
             buttonPrintPress2.UseVisualStyleBackColor = true;
@@ -203,7 +203,7 @@
             // 
             // userControlScroll2
             // 
-            userControlScroll2.Location = new Point(229, 408);
+            userControlScroll2.Location = new Point(232, 408);
             userControlScroll2.Name = "userControlScroll2";
             userControlScroll2.Size = new Size(265, 352);
             userControlScroll2.TabIndex = 2;
@@ -213,7 +213,7 @@
             buttonPrintPress1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 186);
             buttonPrintPress1.Location = new Point(6, 25);
             buttonPrintPress1.Name = "buttonPrintPress1";
-            buttonPrintPress1.Size = new Size(215, 70);
+            buttonPrintPress1.Size = new Size(226, 70);
             buttonPrintPress1.TabIndex = 1;
             buttonPrintPress1.Text = "PRESS";
             buttonPrintPress1.UseVisualStyleBackColor = true;
@@ -221,7 +221,7 @@
             // 
             // userControlScroll1
             // 
-            userControlScroll1.Location = new Point(229, 22);
+            userControlScroll1.Location = new Point(232, 22);
             userControlScroll1.Name = "userControlScroll1";
             userControlScroll1.Size = new Size(265, 352);
             userControlScroll1.TabIndex = 0;
@@ -231,7 +231,7 @@
             userControlDecoderDisplayWheel.DisplayText = "Wheel Translation";
             userControlDecoderDisplayWheel.Location = new Point(6, 222);
             userControlDecoderDisplayWheel.Name = "userControlDecoderDisplayWheel";
-            userControlDecoderDisplayWheel.Size = new Size(186, 132);
+            userControlDecoderDisplayWheel.Size = new Size(225, 132);
             userControlDecoderDisplayWheel.TabIndex = 9;
             userControlDecoderDisplayWheel.Visible = false;
             // 

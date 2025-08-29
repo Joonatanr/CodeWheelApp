@@ -62,7 +62,7 @@ namespace CodeWheelApp
         private void paintGlyphs(Graphics g)
         {
             int yPos = 80;
-            const int interval = 60;
+            const int interval = 65;
 
             if (TopImage != null)
             {
