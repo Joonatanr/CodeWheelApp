@@ -44,8 +44,10 @@
             buttonTurnMidLeft = new Button();
             buttonTurnMidRight = new Button();
             groupBox3 = new GroupBox();
+            buttonPrintPress2 = new Button();
+            userControlScroll2 = new UserControlScroll();
+            buttonPrintPress1 = new Button();
             userControlScroll1 = new UserControlScroll();
-            buttonPrintPress = new Button();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
@@ -70,18 +72,19 @@
             // 
             // textBoxInnerWheel
             // 
+            textBoxInnerWheel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxInnerWheel.Location = new Point(77, 22);
             textBoxInnerWheel.Name = "textBoxInnerWheel";
             textBoxInnerWheel.ReadOnly = true;
-            textBoxInnerWheel.Size = new Size(179, 23);
+            textBoxInnerWheel.Size = new Size(100, 23);
             textBoxInnerWheel.TabIndex = 2;
             // 
             // buttonTurnInnerLeft
             // 
             buttonTurnInnerLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnInnerLeft.Location = new Point(38, 22);
+            buttonTurnInnerLeft.Location = new Point(7, 14);
             buttonTurnInnerLeft.Name = "buttonTurnInnerLeft";
-            buttonTurnInnerLeft.Size = new Size(75, 58);
+            buttonTurnInnerLeft.Size = new Size(75, 53);
             buttonTurnInnerLeft.TabIndex = 3;
             buttonTurnInnerLeft.Text = "<<";
             buttonTurnInnerLeft.UseVisualStyleBackColor = true;
@@ -89,10 +92,11 @@
             // 
             // buttonTurnInnerRight
             // 
+            buttonTurnInnerRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonTurnInnerRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnInnerRight.Location = new Point(119, 22);
+            buttonTurnInnerRight.Location = new Point(88, 14);
             buttonTurnInnerRight.Name = "buttonTurnInnerRight";
-            buttonTurnInnerRight.Size = new Size(75, 58);
+            buttonTurnInnerRight.Size = new Size(75, 53);
             buttonTurnInnerRight.TabIndex = 4;
             buttonTurnInnerRight.Text = ">>";
             buttonTurnInnerRight.UseVisualStyleBackColor = true;
@@ -107,18 +111,19 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(textBoxInnerWheel);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(1119, 15);
+            groupBox1.Location = new Point(12, 10);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(262, 130);
+            groupBox1.Size = new Size(188, 116);
             groupBox1.TabIndex = 6;
             groupBox1.TabStop = false;
             // 
             // textBoxOuterWheel
             // 
+            textBoxOuterWheel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxOuterWheel.Location = new Point(77, 80);
             textBoxOuterWheel.Name = "textBoxOuterWheel";
             textBoxOuterWheel.ReadOnly = true;
-            textBoxOuterWheel.Size = new Size(179, 23);
+            textBoxOuterWheel.Size = new Size(100, 23);
             textBoxOuterWheel.TabIndex = 6;
             // 
             // label4
@@ -132,10 +137,11 @@
             // 
             // textBoxMidWheel
             // 
+            textBoxMidWheel.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             textBoxMidWheel.Location = new Point(77, 51);
             textBoxMidWheel.Name = "textBoxMidWheel";
             textBoxMidWheel.ReadOnly = true;
-            textBoxMidWheel.Size = new Size(179, 23);
+            textBoxMidWheel.Size = new Size(100, 23);
             textBoxMidWheel.TabIndex = 4;
             // 
             // label3
@@ -156,18 +162,18 @@
             groupBox2.Controls.Add(buttonTurnMidRight);
             groupBox2.Controls.Add(buttonTurnInnerLeft);
             groupBox2.Controls.Add(buttonTurnInnerRight);
-            groupBox2.Location = new Point(1119, 151);
+            groupBox2.Location = new Point(658, 570);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(256, 611);
+            groupBox2.Size = new Size(172, 192);
             groupBox2.TabIndex = 7;
             groupBox2.TabStop = false;
             // 
             // buttonTurnOuterLeft
             // 
             buttonTurnOuterLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnOuterLeft.Location = new Point(38, 150);
+            buttonTurnOuterLeft.Location = new Point(7, 132);
             buttonTurnOuterLeft.Name = "buttonTurnOuterLeft";
-            buttonTurnOuterLeft.Size = new Size(75, 58);
+            buttonTurnOuterLeft.Size = new Size(75, 51);
             buttonTurnOuterLeft.TabIndex = 7;
             buttonTurnOuterLeft.Text = "<<";
             buttonTurnOuterLeft.UseVisualStyleBackColor = true;
@@ -175,10 +181,11 @@
             // 
             // buttonTurnOuterRight
             // 
+            buttonTurnOuterRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonTurnOuterRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnOuterRight.Location = new Point(119, 150);
+            buttonTurnOuterRight.Location = new Point(87, 132);
             buttonTurnOuterRight.Name = "buttonTurnOuterRight";
-            buttonTurnOuterRight.Size = new Size(75, 58);
+            buttonTurnOuterRight.Size = new Size(75, 51);
             buttonTurnOuterRight.TabIndex = 8;
             buttonTurnOuterRight.Text = ">>";
             buttonTurnOuterRight.UseVisualStyleBackColor = true;
@@ -187,9 +194,9 @@
             // buttonTurnMidLeft
             // 
             buttonTurnMidLeft.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnMidLeft.Location = new Point(38, 86);
+            buttonTurnMidLeft.Location = new Point(6, 73);
             buttonTurnMidLeft.Name = "buttonTurnMidLeft";
-            buttonTurnMidLeft.Size = new Size(75, 58);
+            buttonTurnMidLeft.Size = new Size(75, 53);
             buttonTurnMidLeft.TabIndex = 5;
             buttonTurnMidLeft.Text = "<<";
             buttonTurnMidLeft.UseVisualStyleBackColor = true;
@@ -197,10 +204,11 @@
             // 
             // buttonTurnMidRight
             // 
+            buttonTurnMidRight.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             buttonTurnMidRight.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 186);
-            buttonTurnMidRight.Location = new Point(119, 86);
+            buttonTurnMidRight.Location = new Point(87, 73);
             buttonTurnMidRight.Name = "buttonTurnMidRight";
-            buttonTurnMidRight.Size = new Size(75, 58);
+            buttonTurnMidRight.Size = new Size(75, 53);
             buttonTurnMidRight.TabIndex = 6;
             buttonTurnMidRight.Text = ">>";
             buttonTurnMidRight.UseVisualStyleBackColor = true;
@@ -208,45 +216,65 @@
             // 
             // groupBox3
             // 
+            groupBox3.Controls.Add(buttonPrintPress2);
+            groupBox3.Controls.Add(userControlScroll2);
+            groupBox3.Controls.Add(buttonPrintPress1);
             groupBox3.Controls.Add(userControlScroll1);
             groupBox3.Location = new Point(836, 15);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(277, 747);
+            groupBox3.Size = new Size(378, 747);
             groupBox3.TabIndex = 8;
             groupBox3.TabStop = false;
-            groupBox3.Text = "groupBox3";
+            groupBox3.Text = "Scrolls";
+            // 
+            // buttonPrintPress2
+            // 
+            buttonPrintPress2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 186);
+            buttonPrintPress2.Location = new Point(6, 385);
+            buttonPrintPress2.Name = "buttonPrintPress2";
+            buttonPrintPress2.Size = new Size(99, 70);
+            buttonPrintPress2.TabIndex = 3;
+            buttonPrintPress2.Text = "PRESS";
+            buttonPrintPress2.UseVisualStyleBackColor = true;
+            buttonPrintPress2.Click += buttonPrintPress2_Click;
+            // 
+            // userControlScroll2
+            // 
+            userControlScroll2.Location = new Point(101, 376);
+            userControlScroll2.Name = "userControlScroll2";
+            userControlScroll2.Size = new Size(265, 352);
+            userControlScroll2.TabIndex = 2;
+            // 
+            // buttonPrintPress1
+            // 
+            buttonPrintPress1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 186);
+            buttonPrintPress1.Location = new Point(6, 25);
+            buttonPrintPress1.Name = "buttonPrintPress1";
+            buttonPrintPress1.Size = new Size(99, 70);
+            buttonPrintPress1.TabIndex = 1;
+            buttonPrintPress1.Text = "PRESS";
+            buttonPrintPress1.UseVisualStyleBackColor = true;
+            buttonPrintPress1.Click += buttonPrintPress_Click;
             // 
             // userControlScroll1
             // 
-            userControlScroll1.Location = new Point(6, 19);
+            userControlScroll1.Location = new Point(101, 18);
             userControlScroll1.Name = "userControlScroll1";
             userControlScroll1.Size = new Size(265, 352);
             userControlScroll1.TabIndex = 0;
-            // 
-            // buttonPrintPress
-            // 
-            buttonPrintPress.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 186);
-            buttonPrintPress.Location = new Point(688, 33);
-            buttonPrintPress.Name = "buttonPrintPress";
-            buttonPrintPress.Size = new Size(132, 70);
-            buttonPrintPress.TabIndex = 1;
-            buttonPrintPress.Text = "PRESS";
-            buttonPrintPress.UseVisualStyleBackColor = true;
-            buttonPrintPress.Click += buttonPrintPress_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1393, 774);
-            Controls.Add(buttonPrintPress);
+            ClientSize = new Size(1226, 774);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(userControlInnerCodeWheel1);
             DoubleBuffered = true;
             Name = "Form1";
-            Text = "Form1";
+            Text = "Gnome Wheel Puzzle";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             groupBox2.ResumeLayout(false);
@@ -273,6 +301,8 @@
         private Button buttonTurnMidRight;
         private GroupBox groupBox3;
         private UserControlScroll userControlScroll1;
-        private Button buttonPrintPress;
+        private Button buttonPrintPress1;
+        private Button buttonPrintPress2;
+        private UserControlScroll userControlScroll2;
     }
 }

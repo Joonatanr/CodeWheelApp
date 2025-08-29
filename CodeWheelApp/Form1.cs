@@ -137,5 +137,14 @@ namespace CodeWheelApp
 
             userControlScroll1.setGlyphImages(top, middle, bottom);
         }
+
+        private void buttonPrintPress2_Click(object sender, EventArgs e)
+        {
+            Bitmap top = InnerWheel.getCurrentSelectedImage();
+            Bitmap middle = MidWheel.getCurrentSelectedImage();
+            Bitmap bottom = OuterWheel.getCurrentSelectedImage();
+
+            userControlScroll2.setGlyphImages(top, middle, bottom);
+        }
     }
 }
