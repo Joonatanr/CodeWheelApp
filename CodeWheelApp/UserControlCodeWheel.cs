@@ -19,6 +19,8 @@ namespace CodeWheelApp
     public partial class UserControlCodeWheel : UserControl
     {        
         private List<SingleWheel> Wheels = new List<SingleWheel>();
+
+        public Boolean IsDynamicResizing { get; set; } = false;
         
         public UserControlCodeWheel()
         {
@@ -26,15 +28,44 @@ namespace CodeWheelApp
             this.DoubleBuffered = true;
             this.BackColor = Color.Transparent;
             SetStyle(ControlStyles.SupportsTransparentBackColor, true);
-
-            //InnerWheel = new SingleWheel(500);
-            //InnerWheel.requestRedraw = new SingleWheel.RequestRedrawHandler(this.Invalidate);
         }
 
         public void AddWheel(SingleWheel wheel)
         {
             wheel.requestRedraw = new SingleWheel.RequestRedrawHandler(this.Invalidate);
             Wheels.Add(wheel);
+            
+            if (IsDynamicResizing)
+            {
+                wheel.IsDynamicGlyphResize = true;
+            }
+
+            handleDynamicResize();
+        }
+
+        private void handleDynamicResize()
+        {
+            if (IsDynamicResizing)
+            {
+                float outerRadius = Math.Min(this.Width, this.Height) / 2;
+                outerRadius -= 5;
+
+                float innerRadius = outerRadius / 6;
+                float wheelWidth = (outerRadius - innerRadius) / Wheels.Count;
+
+                foreach (SingleWheel wheel in Wheels)
+                {
+                    wheel.WheelWidth = (int)wheelWidth;
+                    wheel.WheelDiameter = (int)(innerRadius + wheelWidth) * 2;
+                    innerRadius += wheelWidth;
+                }
+            }
+        }
+
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            handleDynamicResize();
         }
 
         protected override void OnPaint(PaintEventArgs e)

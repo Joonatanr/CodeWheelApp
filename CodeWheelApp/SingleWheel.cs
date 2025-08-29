@@ -38,8 +38,41 @@ namespace CodeWheelApp
             }
         }
 
-        public int WheelWidth { get; set; } = 80;
-        public int WheelDiameter { get; set; } = 480;
+        private int _wheelWidth = 80;
+        private int _wheelDiameter = 480;
+
+        public int WheelWidth 
+        {
+            get
+            {
+                return _wheelWidth;
+            }
+
+
+            set
+            {
+                _wheelWidth = value;
+
+            }
+        }
+        public int WheelDiameter 
+        { 
+            get 
+            { 
+                return _wheelDiameter; 
+            } 
+            set
+            {
+                if (_wheelDiameter != value)
+                {
+                    _wheelDiameter = value;
+                    myBitmap = new Bitmap(WheelDiameter, WheelDiameter);
+                    updateBitmap();
+                }
+            } 
+        }
+
+        public Boolean IsDynamicGlyphResize { get; set; } = false;
 
         public float OuterRadius { get { return WheelDiameter / 2; } }
         public float InnerRadius { get { return (OuterRadius - WheelWidth); } }
@@ -111,7 +144,6 @@ namespace CodeWheelApp
                 
                 gfx.Transform = m;
                 gfx.DrawImage(myBitmap, 0, 0);
-                //gfx.DrawImage(myBitmap, getRectangleAroundCenterPoint(canvasCenter, myBitmap.Size));
                 gfx.ResetTransform();
             }
         }
@@ -129,7 +161,45 @@ namespace CodeWheelApp
 
                 Bitmap original = myValues[x].Image;
                 /* Scaling down to 50% is hardcoded now. Could do this more dynamically ofcourse... */
-                Bitmap resized = new Bitmap(original, new Size(original.Width / 2, original.Height / 2));
+
+                Bitmap resized;
+
+                if (IsDynamicGlyphResize)
+                {
+                    int divisor;
+                    int multiplier = 1;
+
+                    if (this.WheelWidth < 10)
+                    {
+                        divisor = 8;
+                    }else if (this.WheelWidth < 30)
+                    {
+                        divisor = 6;
+                    }else if (this.WheelWidth < 70)
+                    {
+                        divisor = 4;
+                    }
+                    else if (this.WheelWidth < 100)
+                    {
+                        divisor = 2;
+                    }
+                    else if(this.WheelWidth < 150)
+                    {
+                        multiplier = 2;
+                        divisor = 3;
+                    }
+                    else
+                    {
+                        divisor = 1;
+                    }
+
+                    resized = new Bitmap(original, new Size(original.Width * multiplier / divisor, original.Height * multiplier / divisor));
+
+                }
+                else
+                {
+                    resized = new Bitmap(original, new Size(original.Width / 2, original.Height / 2));
+                }
 
                 using (Matrix m = new Matrix())
                 {
@@ -162,7 +232,6 @@ namespace CodeWheelApp
         {
             gfx.FillEllipse(new SolidBrush(Color.Purple), getRectangleAroundCenterPoint(location, size));
         }
-
 
         private void drawDonut(Graphics gfx, PointF center, float radius)
         {
