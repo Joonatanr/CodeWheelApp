@@ -7,6 +7,9 @@
     <Compile Update="UserControlCodeWheel.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="UserControlDecoderDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="UserControlScroll.cs">
       <SubType>UserControl</SubType>
     </Compile>

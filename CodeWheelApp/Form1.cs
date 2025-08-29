@@ -28,13 +28,13 @@ namespace CodeWheelApp
             InnerWheelDictionary.Add("PULL", Properties.Resources.INNER_PULL);
             InnerWheelDictionary.Add("DISINTEGRATE", Properties.Resources.INNER_DISINTEGRATE);
 
-            InnerWheel = new SingleWheel(300);
+            InnerWheel = new SingleWheel(340);
             InnerWheel.ImageDictionary = InnerWheelDictionary;
-            InnerWheel.WheelWidth = 65;
+            InnerWheel.WheelWidth = 75;
             InnerWheel.WheelColor = Color.FromArgb(255, 229, 153);
             InnerWheel.setToValue("DANCE");
 
-            textBoxInnerWheel.Text = InnerWheel.getCurrentSelectedValue();
+            //textBoxInnerWheel.Text = InnerWheel.getCurrentSelectedValue();
             userControlInnerCodeWheel1.AddWheel(InnerWheel);
 
             /* MIDDLE WHEEL */
@@ -61,7 +61,7 @@ namespace CodeWheelApp
             MidWheel.WheelColor = Color.FromArgb(255, 217, 102);
             MidWheel.setToValue("HUMAN");
 
-            textBoxMidWheel.Text = MidWheel.getCurrentSelectedValue();
+            //textBoxMidWheel.Text = MidWheel.getCurrentSelectedValue();
             userControlInnerCodeWheel1.AddWheel(MidWheel);
 
             /* OUTER WHEEL */
@@ -88,45 +88,56 @@ namespace CodeWheelApp
             OuterWheel.WheelColor = Color.FromArgb(241, 194, 50);
             OuterWheel.setToValue("SLOWLY");
 
-            textBoxOuterWheel.Text = OuterWheel.getCurrentSelectedValue();
+            //textBoxOuterWheel.Text = OuterWheel.getCurrentSelectedValue();
             userControlInnerCodeWheel1.AddWheel(OuterWheel);
+
+            userControlDecoderDisplayWheel.setDisplayedValues(InnerWheel.getCurrentSelectedValue(), MidWheel.getCurrentSelectedValue(), OuterWheel.getCurrentSelectedValue());
+            updateWheelDecodeDisplay();
+        }
+
+        private void updateWheelDecodeDisplay()
+        {
+            userControlDecoderDisplayWheel.setDisplayedValues
+                (InnerWheel.getCurrentSelectedValue(), 
+                MidWheel.getCurrentSelectedValue(), 
+                OuterWheel.getCurrentSelectedValue());
 
         }
 
         private void buttonTurnLeft_Click(object sender, EventArgs e)
         {
             InnerWheel.Rotate(true);
-            textBoxInnerWheel.Text = InnerWheel.getCurrentSelectedValue();
+            updateWheelDecodeDisplay();
         }
 
         private void buttonTurnRight_Click(object sender, EventArgs e)
         {
             InnerWheel.Rotate(false);
-            textBoxInnerWheel.Text = InnerWheel.getCurrentSelectedValue();
+            updateWheelDecodeDisplay();
         }
 
         private void buttonTurnMidLeft_Click(object sender, EventArgs e)
         {
             MidWheel.Rotate(true);
-            textBoxMidWheel.Text = MidWheel.getCurrentSelectedValue();
+            updateWheelDecodeDisplay();
         }
 
         private void buttonTurnMidRight_Click(object sender, EventArgs e)
         {
             MidWheel.Rotate(false);
-            textBoxMidWheel.Text = MidWheel.getCurrentSelectedValue();
+            updateWheelDecodeDisplay();
         }
 
         private void buttonTurnOuterLeft_Click(object sender, EventArgs e)
         {
             OuterWheel.Rotate(true);
-            textBoxOuterWheel.Text = OuterWheel.getCurrentSelectedValue();
+            updateWheelDecodeDisplay();
         }
 
         private void buttonTurnOuterRight_Click(object sender, EventArgs e)
         {
             OuterWheel.Rotate(false);
-            textBoxOuterWheel.Text = OuterWheel.getCurrentSelectedValue();
+            updateWheelDecodeDisplay();
         }
 
         private void buttonPrintPress_Click(object sender, EventArgs e)
@@ -136,6 +147,7 @@ namespace CodeWheelApp
             Bitmap bottom = OuterWheel.getCurrentSelectedImage();
 
             userControlScroll1.setGlyphImages(top, middle, bottom);
+            userControlDecoderDisplayScroll1.setDisplayedValues(InnerWheel.getCurrentSelectedValue(), MidWheel.getCurrentSelectedValue(), OuterWheel.getCurrentSelectedValue());
         }
 
         private void buttonPrintPress2_Click(object sender, EventArgs e)
@@ -145,6 +157,8 @@ namespace CodeWheelApp
             Bitmap bottom = OuterWheel.getCurrentSelectedImage();
 
             userControlScroll2.setGlyphImages(top, middle, bottom);
+            userControlDecoderDisplayScroll2.setDisplayedValues(InnerWheel.getCurrentSelectedValue(), MidWheel.getCurrentSelectedValue(), OuterWheel.getCurrentSelectedValue());
+
         }
     }
 }

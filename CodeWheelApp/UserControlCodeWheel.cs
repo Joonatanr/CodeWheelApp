@@ -56,15 +56,44 @@ namespace CodeWheelApp
         {
             Pen myPen = new Pen(Color.Black, 4);
 
-            PointF start = new PointF( (this.Width / 2) - 50 , this.Height - 80);
-            PointF end = new PointF((this.Width / 2) - 25, (this.Height / 2) + 70);
+            float innerRadius = this.Width;
+            float outerRadius = 0;
 
+            foreach (SingleWheel wheel in Wheels)
+            {
+                if(wheel.InnerRadius < innerRadius)
+                {
+                    innerRadius = wheel.InnerRadius;
+                }
+                
+                if(wheel.OuterRadius > outerRadius)
+                {
+                    outerRadius = wheel.OuterRadius;    
+                }
+            }
+
+            PointF centerPoint = new PointF(this.Width / 2, this.Height / 2); ;
+
+
+            PointF start = getPointOnCircularLine(270.0f + 15.0f, centerPoint, innerRadius);
+            PointF end = getPointOnCircularLine(270.0f + 10.0f, centerPoint, outerRadius);
             g.DrawLine(myPen, start, end);
 
-            start = new PointF((this.Width / 2) + 50, this.Height - 80);
-            end = new PointF((this.Width / 2) + 25, (this.Height / 2) + 70);
-
+            start = getPointOnCircularLine(270.0f + 345.0f, centerPoint, innerRadius);
+            end = getPointOnCircularLine(270.0f + 350.0f, centerPoint, outerRadius);
             g.DrawLine(myPen, start, end);
+        }
+
+
+        private static PointF getPointOnCircularLine(float angle, PointF centerPoint, float radius)
+        {
+            float myAngle = ((angle * (float)Math.PI) / 180f);
+
+            float xPos = centerPoint.X - (radius * (float)(Math.Cos(myAngle)));
+            float yPos = centerPoint.Y - (radius * (float)(Math.Sin(myAngle)));
+
+            PointF location = new PointF(xPos, yPos);
+            return location;
         }
     }
 }

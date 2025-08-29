@@ -41,6 +41,9 @@ namespace CodeWheelApp
         public int WheelWidth { get; set; } = 80;
         public int WheelDiameter { get; set; } = 480;
 
+        public float OuterRadius { get { return WheelDiameter / 2; } }
+        public float InnerRadius { get { return (OuterRadius - WheelWidth); } }
+
         /* Called when the user control should redraw. */
         public delegate void RequestRedrawHandler();
         public RequestRedrawHandler requestRedraw = null;
@@ -158,7 +161,6 @@ namespace CodeWheelApp
         private void drawSingleMarker(Graphics gfx, PointF location, SizeF size, float angle)
         {
             gfx.FillEllipse(new SolidBrush(Color.Purple), getRectangleAroundCenterPoint(location, size));
-            //gfx.FillRectangle(new SolidBrush(Color.Red), getRectangleAroundCenterPoint(location, size));
         }
 
 
@@ -250,14 +252,14 @@ namespace CodeWheelApp
             return new RectangleF(xPos, yPos, size.Width, size.Height);
         }
 
-        public static Region GetRingRegion(PointF center, float innerRadius, float outherRadius)
+        public static Region GetRingRegion(PointF center, float innerRadius, float outerRadius)
         {
             // You need a path for the outer and inner circles
             var path1 = new GraphicsPath();
             var path2 = new GraphicsPath();
 
             // Define the paths (where X, Y, and D are chosen externally)
-            path1.AddEllipse(GetRectangle(center, outherRadius));
+            path1.AddEllipse(GetRectangle(center, outerRadius));
             path2.AddEllipse(GetRectangle(center, innerRadius));
 
             // Create a region from the Outer circle.
@@ -279,7 +281,6 @@ namespace CodeWheelApp
         {
             if (myBitmap != null)
             {
-                //float radius = myBitmap.Width / 2;
                 float radius = WheelDiameter / 2;
                 PointF center = new PointF(myBitmap.Width / 2, myBitmap.Height / 2);
 
@@ -288,7 +289,6 @@ namespace CodeWheelApp
                 gfx.Clear(Color.Transparent);
 
                 drawDonut(gfx, center, radius);
-                //drawMarkers(gfx, center, radius - (DonutWidth / 2));
                 drawImages(gfx, center, radius - (WheelWidth / 2));
             }
 
