@@ -162,6 +162,7 @@
             // 
             // buttonDmDisplay
             // 
+            buttonDmDisplay.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             buttonDmDisplay.Location = new Point(413, 802);
             buttonDmDisplay.Name = "buttonDmDisplay";
             buttonDmDisplay.Size = new Size(75, 40);
