@@ -57,7 +57,7 @@
             userControlInnerCodeWheel1.BackColor = Color.Transparent;
             userControlInnerCodeWheel1.Location = new Point(179, 34);
             userControlInnerCodeWheel1.Name = "userControlInnerCodeWheel1";
-            userControlInnerCodeWheel1.Size = new Size(674, 650);
+            userControlInnerCodeWheel1.Size = new Size(701, 668);
             userControlInnerCodeWheel1.TabIndex = 0;
             // 
             // buttonTurnInnerLeft

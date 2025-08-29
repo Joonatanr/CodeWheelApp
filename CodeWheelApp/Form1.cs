@@ -32,7 +32,7 @@ namespace CodeWheelApp
 
             InnerWheel = new SingleWheel(340);
             InnerWheel.ImageDictionary = InnerWheelDictionary;
-            InnerWheel.WheelWidth = 75;
+            InnerWheel.WheelWidth = 80;
             InnerWheel.WheelColor = Color.FromArgb(255, 229, 153);
             InnerWheel.setToValue("DANCE");
 
